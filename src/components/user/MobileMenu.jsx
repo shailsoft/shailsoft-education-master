@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const COURSE_LINKS = [
   'Accounting/Finance', 'Civil Engineering', 'Art/Design', 'Marine Engineering',
@@ -11,22 +11,54 @@ const COURSE_LINKS = [
 
 export default function MobileMenu({ onOpenAuth }) {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   return (
     <div className="ed-mob-menu">
       <div className="ed-mob-menu-con">
         <div className="ed-mm-left">
           <div className="wed-logo">
-            <Link to="/"><img src="/images/logo.png" alt="" /></Link>
+            <Link to="/">
+              <img src="/images/companylogo.png" alt="Education Master" />
+            </Link>
           </div>
         </div>
         <div className="ed-mm-right">
           <div className="ed-mm-menu">
-            <a href="#!" className="ed-micon" onClick={(e) => { e.preventDefault(); setOpen(true); }}>
+            <a
+              href="#!"
+              className="ed-micon"
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(true);
+              }}
+              aria-label="Open mobile menu"
+              aria-expanded={open}
+            >
               <i className="fa fa-bars"></i>
             </a>
-            <div className="ed-mm-inn" style={{ display: open ? 'block' : '' }}>
-              <a href="#!" className="ed-mi-close" onClick={(e) => { e.preventDefault(); setOpen(false); }}>
+            <div className={`ed-mm-overlay${open ? ' is-open' : ''}`} onClick={() => setOpen(false)} />
+            <div className={`ed-mm-inn${open ? ' ed-mm-act' : ''}`}>
+              <a
+                href="#!"
+                className="ed-mi-close"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                }}
+                aria-label="Close mobile menu"
+              >
                 <i className="fa fa-times"></i>
               </a>
               <h4>All Courses</h4>

@@ -1,0 +1,277 @@
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+.search-form,
+.sf-type,
+.home-top-cour,
+.bot-book,
+.cour-det-main,
+.cour-det-side,
+.con-form,
+.con-info,
+.log-in-pop,
+.pro-user,
+.pro-menu,
+.ed-mm-inn {
+  max-width: 100%;
+}
+
+.ed-mm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 16, 28, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 998;
+}
+
+.ed-mm-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .ed-mob-menu {
+    display: block;
+  }
+
+  .ed-mob-menu-con {
+    width: min(94%, 1200px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ed-mm-left,
+  .ed-mm-right {
+    float: none;
+    width: auto;
+  }
+
+  .ed-mob-menu .wed-logo {
+    float: none;
+    width: auto;
+  }
+
+  .ed-mob-menu .wed-logo a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 55px;
+  }
+
+  .ed-mob-menu .wed-logo a img {
+    width: auto;
+    max-width: min(185px, 52vw);
+    height: 42px;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .ed-mm-inn {
+    top: 0;
+    right: -100%;
+    width: min(86vw, 360px);
+    height: 100dvh;
+    padding: 72px 22px 28px;
+    z-index: 999;
+  }
+
+  .ed-mm-act {
+    right: 0;
+  }
+
+  .ed-mi-close {
+    top: 18px;
+    right: 18px;
+    margin: 0;
+  }
+
+  .search-top {
+    margin-top: 55px;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sf-type,
+  .sf-submit {
+    float: none;
+    width: 100%;
+  }
+
+  .sf-type {
+    position: relative;
+  }
+
+  .sf-input input,
+  .sf-submit input {
+    border-radius: 6px;
+  }
+
+  .sf-list {
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    max-height: 260px;
+    border-radius: 8px;
+  }
+
+  .home-top-cour {
+    padding: 15px;
+  }
+
+  .home-top-cour .col-md-3,
+  .home-top-cour .col-md-9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home-top-cour img {
+    margin-bottom: 16px;
+  }
+
+  .bot-book {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bb-link a {
+    display: inline-block;
+    line-height: 1.4;
+  }
+
+  .log-in-pop {
+    width: min(92vw, 760px);
+    margin-top: 70px;
+  }
+
+  .log-in-pop-right {
+    padding: 32px 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body,
+  p,
+  li,
+  a,
+  span,
+  table,
+  tr,
+  td,
+  th,
+  label {
+    overflow-wrap: anywhere;
+  }
+
+  .con-title h2,
+  .con-title h2 span {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .carousel-caption {
+    right: 7%;
+    left: 7%;
+  }
+
+  .slider-con h2,
+  .slider-con h2 span {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .slider-con p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 14px 0 18px;
+  }
+
+  .slider-con a {
+    display: inline-block;
+    width: calc(50% - 10px);
+    min-width: 130px;
+    margin: 5px;
+    line-height: 1.4;
+    padding: 12px 18px;
+    height: auto;
+  }
+
+  .full-bot-book {
+    text-align: center;
+  }
+
+  .bb-text h4 {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ed-mob-menu .wed-logo a img {
+    max-width: 150px;
+    height: 36px;
+  }
+
+  .ed-mm-inn {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .search-top {
+    padding: 10px 0;
+  }
+
+  .sf-input input {
+    padding-left: 42px;
+  }
+
+  .slider-con a {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home-top-cour-rat {
+    right: 10px;
+  }
+
+  .log-in-pop {
+    width: 94vw;
+  }
+}
