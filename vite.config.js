@@ -1,16 +1,18 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(process.cwd(), 'src'),
-      '@assets': path.resolve(process.cwd(), 'src/assets'),
-      '@components': path.resolve(process.cwd(), 'src/components'),
-      '@pages': path.resolve(process.cwd(), 'src/pages'),
-      '@layouts': path.resolve(process.cwd(), 'src/layouts'),
+      "@": path.resolve(process.cwd(), "src"),
+      "@assets": path.resolve(process.cwd(), "src/assets"),
+      "@components": path.resolve(process.cwd(), "src/components"),
+      "@pages": path.resolve(process.cwd(), "src/pages"),
+      "@layouts": path.resolve(process.cwd(), "src/layouts"),
+      base:
+        process.env.VITE_BASE_PATH || "/shailsoft-education-master/tree/dev",
     },
   },
   server: {
