@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
  */
 export default function Header() {
   const [open, setOpen] = useState(null); // 'about' | 'admi' | 'cour' | null
+  const baseUrl = import.meta.env.BASE_URL;
   const show = (key) => () => setOpen(key);
   const hide = () => setOpen(null);
   const mmStyle = (key) => ({ display: open === key ? "block" : "none" });
@@ -20,7 +21,7 @@ export default function Header() {
           <div className="col-md-12">
             <div className="wed-logo">
               <Link to="/">
-                <img src="/images/companylogo.png" alt="Education Master" />
+                <img src={`${baseUrl}images/companylogo.png`} alt="Education Master" />
               </Link>
             </div>
             <div className="main-menu">
@@ -46,7 +47,7 @@ export default function Header() {
                               className="course-overlay menu-about"
                               to="/admission"
                             >
-                              <img src="/images/h-about.jpg" alt="" />
+                              <img src={`${baseUrl}images/h-about.jpg`} alt="" />
                               <span>Academics</span>
                             </Link>
                           </div>
@@ -143,7 +144,7 @@ export default function Header() {
                           >
                             <div className="ed-course-in">
                               <Link className="course-overlay" to={item.to}>
-                                <img src={`/images/${item.img}`} alt="" />
+                                <img src={`${baseUrl}images/${item.img}`} alt="" />
                                 <span>{item.label}</span>
                               </Link>
                             </div>

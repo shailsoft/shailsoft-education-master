@@ -6,6 +6,7 @@ import { ALL_COURSES } from '../../data/courses.js';
 export default function AllCourses() {
   const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState('title');
+  const baseUrl = import.meta.env.BASE_URL;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -52,7 +53,7 @@ export default function AllCourses() {
               <div key={c.id} className="col-md-4 col-sm-6 col-xs-12">
                 <div className="all-cour-box">
                   <Link to={`/course-details/${c.id}`}>
-                    <img src={c.img} alt={c.title} onError={(e) => { e.currentTarget.src = '/images/placeholder.jpg'; }} />
+                    <img src={c.img} alt={c.title} onError={(e) => { e.currentTarget.src = `${baseUrl}images/placeholder.jpg`; }} />
                   </Link>
                   <div className="all-cour-box-con">
                     <Link to={`/course-details/${c.id}`}><h4>{c.title}</h4></Link>

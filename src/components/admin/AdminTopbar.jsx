@@ -6,6 +6,7 @@ export default function AdminTopbar({ onToggleSidebar }) {
   const { auth, logout } = useApp();
   const navigate = useNavigate();
   const [accountOpen, setAccountOpen] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   const handleLogout = () => {
     logout();
@@ -23,7 +24,7 @@ export default function AdminTopbar({ onToggleSidebar }) {
             <i className="fa fa-bars tab-menu" aria-hidden="true"></i>
           </a>
           <Link to="/" className="logo">
-            <img src="/images/logo1.png" alt="Admin" />
+            <img src={`${baseUrl}images/logo1.png`} alt="Admin" />
           </Link>
         </div>
 
@@ -54,7 +55,7 @@ export default function AdminTopbar({ onToggleSidebar }) {
             href="#"
             onClick={(e) => { e.preventDefault(); setAccountOpen((v) => !v); }}
           >
-            <img src="/images/user.jpg" alt="" />
+            <img src={`${baseUrl}images/user.jpg`} alt="" />
             {auth.user?.name || 'My Account'} <i className="fa fa-angle-down" aria-hidden="true"></i>
           </a>
           {accountOpen && (

@@ -17,6 +17,7 @@ const QUICK_LINKS = [
 export default function Home() {
   const leftCourses = POPULAR_COURSES.slice(0, 4);
   const rightCourses = POPULAR_COURSES.slice(4, 8);
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <>
@@ -34,7 +35,7 @@ export default function Home() {
                       to={l.to}
                       className="waves-effect waves-light btn-large wed-pop-ser-btn"
                     >
-                      <img src={`/images/icon/${l.icon}`} alt="" /> {l.label}
+                      <img src={`${baseUrl}images/icon/${l.icon}`} alt="" /> {l.label}
                     </Link>
                   </li>
                 ))}

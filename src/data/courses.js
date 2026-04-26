@@ -1,3 +1,5 @@
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const POPULAR_COURSES = [
   {
     id: 1,
@@ -71,7 +73,7 @@ export const POPULAR_COURSES = [
     available: 32,
     shares: 124,
   },
-];
+].map((course) => ({ ...course, img: withBase(course.img) }));
 
 export const ALL_COURSES = [
   {
@@ -170,7 +172,7 @@ export const ALL_COURSES = [
     fee: "$3,100",
     seats: 80,
   },
-];
+].map((course) => ({ ...course, img: withBase(course.img) }));
 
 export const DISCOVER = [
   { img: "/images/h-about.jpg", label: "Academics", to: "/about" },
@@ -181,7 +183,7 @@ export const DISCOVER = [
   { img: "/images/h-adm.jpg", label: "Exam Time Line", to: "/db-time-line" },
   { img: "/images/h-cam1.jpg", label: "Seminar", to: "/seminar" },
   { img: "/images/h-res1.jpg", label: "Events", to: "/events" },
-];
+].map((item) => ({ ...item, img: withBase(item.img) }));
 
 export const SLIDER = [
   {
@@ -202,7 +204,7 @@ export const SLIDER = [
     accent: "Innovation",
     text: "Join the conversation and help build the future of education.",
   },
-];
+].map((slide) => ({ ...slide, img: withBase(slide.img) }));
 
 export const UPCOMING_EVENTS = [
   {

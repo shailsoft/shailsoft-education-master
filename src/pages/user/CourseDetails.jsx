@@ -6,6 +6,7 @@ export default function CourseDetails() {
   const { slug } = useParams();
   const courseId = Number(slug);
   const course = ALL_COURSES.find((c) => c.id === courseId) || ALL_COURSES[0];
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function CourseDetails() {
           <div className="row">
             <div className="col-md-8">
               <div className="cour-det-main">
-                <img src={course.img} alt={course.title} onError={(e) => { e.currentTarget.src = '/images/placeholder.jpg'; }} />
+                <img src={course.img} alt={course.title} onError={(e) => { e.currentTarget.src = `${baseUrl}images/placeholder.jpg`; }} />
                 <h2>{course.title}</h2>
                 <p>A comprehensive program blending theoretical foundations with hands-on practice. Graduates are prepared for real-world challenges and opportunities in their chosen field.</p>
 

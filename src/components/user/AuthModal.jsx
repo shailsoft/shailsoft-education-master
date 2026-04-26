@@ -7,6 +7,7 @@ import { useApp } from '../../context/AppContext.jsx';
 export default function AuthModal({ mode, setMode }) {
   const { login } = useApp();
   const open = Boolean(mode);
+  const baseUrl = import.meta.env.BASE_URL;
 
   if (!open) return null;
 
@@ -41,7 +42,7 @@ export default function AuthModal({ mode, setMode }) {
         </div>
         <div className="log-in-pop-right">
           <a href="#" className="pop-close" onClick={(e) => { e.preventDefault(); close(); }}>
-            <img src="/images/cancel.png" alt="" />
+            <img src={`${baseUrl}images/cancel.png`} alt="" />
           </a>
 
           {mode === 'signin' && (

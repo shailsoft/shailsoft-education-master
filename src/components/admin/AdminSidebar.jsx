@@ -100,13 +100,14 @@ const MENU = [
 
 export default function AdminSidebar({ open }) {
   const [expanded, setExpanded] = useState(null);
+  const baseUrl = import.meta.env.BASE_URL;
   const toggle = (label) => setExpanded((cur) => (cur === label ? null : label));
 
   return (
     <div className="sb2-1" style={{ display: open ? 'block' : undefined }}>
       <div className="sb2-12">
         <ul>
-          <li><img src="/images/placeholder.jpg" alt="" /></li>
+          <li><img src={`${baseUrl}images/placeholder.jpg`} alt="" /></li>
           <li>
             <h5>Victoria Baker <span>Santa Ana, CA</span></h5>
           </li>

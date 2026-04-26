@@ -12,6 +12,7 @@ const COURSE_LINKS = [
 export default function MobileMenu({ onOpenAuth }) {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     setOpen(false);
@@ -30,7 +31,7 @@ export default function MobileMenu({ onOpenAuth }) {
         <div className="ed-mm-left">
           <div className="wed-logo">
             <Link to="/">
-              <img src="/images/companylogo.png" alt="Education Master" />
+              <img src={`${baseUrl}images/companylogo.png`} alt="Education Master" />
             </Link>
           </div>
         </div>

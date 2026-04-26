@@ -2,6 +2,8 @@ import PageBanner from '../../components/common/PageBanner.jsx';
 import { Link } from 'react-router-dom';
 
 export default function About() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <>
       <PageBanner title="About us" crumbs={[{ label: 'About us' }]} />
@@ -10,7 +12,7 @@ export default function About() {
         <div className="container com-sp pad-bot-70">
           <div className="row">
             <div className="col-md-6">
-              <img src="/images/h-about.jpg" alt="About Education Master" className="img-responsive" />
+              <img src={`${baseUrl}images/h-about.jpg`} alt="About Education Master" className="img-responsive" />
             </div>
             <div className="col-md-6">
               <div className="abt-con">

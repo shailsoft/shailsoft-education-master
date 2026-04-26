@@ -23,6 +23,8 @@ const NEW_COURSES = [
 ];
 
 export default function Footer() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <>
       <section>
@@ -31,7 +33,7 @@ export default function Footer() {
             <div className="row">
               <div className="bot-book">
                 <div className="col-md-2 bb-img">
-                  <img src="/images/3.png" alt="" />
+                  <img src={`${baseUrl}images/3.png`} alt="" />
                 </div>
                 <div className="col-md-7 bb-text">
                   <h4>Always free from repetition — learn at your own pace</h4>
